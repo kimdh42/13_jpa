@@ -1,5 +1,6 @@
 package com.ohgiraffers.jpql.section03.projection;
 
+import com.ohgiraffers.jpql.section04.paging.Menu;
 import jakarta.persistence.EntityManager;
 import jakarta.persistence.PersistenceContext;
 import org.springframework.stereotype.Repository;
@@ -12,7 +13,7 @@ public class ProjectionRepository {
     @PersistenceContext
     private EntityManager entityManager;
 
-    public List<Menu> singleEntityProjection() {
+    public List<com.ohgiraffers.jpql.section04.paging.Menu> singleEntityProjection() {
 
         String jpql = "SELECT m FROM Section03Menu m";
 

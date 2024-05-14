@@ -1,5 +1,6 @@
 package com.ohgiraffers.jpql.section03.projection;
 
+import com.ohgiraffers.jpql.section04.paging.Menu;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;

@@ -1,5 +1,6 @@
 package com.ohgiraffers.jpql.section03.projection;
 
+import com.ohgiraffers.jpql.section04.paging.Menu;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -15,7 +16,7 @@ public class ProjectionService {
     }
 
     @Transactional
-    public List<Menu> singleEntityProjection() {
+    public List<com.ohgiraffers.jpql.section04.paging.Menu> singleEntityProjection() {
 
         List<Menu> menuList = projectionRepository.singleEntityProjection();
 

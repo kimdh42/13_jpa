@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>regist menu</title>
+</head>
+<body>
+    <h1>신규 제품 등록</h1>
+
+    <form action="/product/regist" method="post">
+        <label>제품 이름 : </label><input type="text" name="productName"><br>
+        <label>제품 원가 : </label><input type="text" name="originCost"><br>
+        <label>출시일 : </label><input type="text" name="releaseDate"><br>
+        <label>할인율 : </label><input type="text" name="discountRate"><br>
+        <label>판매량 : </label><input type="text" name="salesQuantity"><br>
+        <label>재고량 : </label><input type="text" name="stockQuantity"><br>
+        <label>카테고리 : </label>
+            <select name="categoryCode" id="categoryCode">
+            </select><br>
+        <label>생산 상태 : </label>
+            <select name="productionStatus">
+                <option value="Y">생산완료</option>
+                <option value="N">생산불가</option>
+                <option value="R">생산중</option>
+                <option value="H">생산일시중지</option>
+            </select><br>
+        <input type="submit" value="제품 등록">
+    </form>
+
+    <script>
+        fetch('/product/category')
+            .then(res => res.json())
+            .then(data => {
+                const $categoryCode = document.getElementById('categoryCode');
+
+                for(let index in data) {
+                    const $option = document.createElement('option');
+                    $option.value = data[index].categoryCode;
+                    $option.textContent = data[index].categoryName;
+
+                    $categoryCode.appendChild($option);
+                }
+            });
+    </script>
+</body>
+</html>
